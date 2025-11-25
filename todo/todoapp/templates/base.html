@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do List</title>
+    <style>
+        body { font-family: Arial; margin: 30px; background-color: #f0f0f0; }
+        nav { background-color: #333; padding: 10px; border-radius: 10px; }
+        nav a { color: white; margin: 0 10px; text-decoration: none; }
+        nav a:hover { text-decoration: underline; }
+        .container { background-color: white; padding: 20px; border-radius: 10px; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'index' %}">All Tasks</a>
+        <a href="{% url 'add_task' %}">Add Task</a>
+        <a href="{% url 'in_progress_tasks' %}">In Progress</a>
+        <a href="{% url 'completed_tasks' %}">Completed</a>
+    </nav>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
